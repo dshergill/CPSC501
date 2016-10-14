@@ -35,8 +35,9 @@ public class Manager
 		
 	public void start()
 	{
-//Attributes of manager
-//Obtains input from the user for the number of round. If a number outside the range is chosen, 10 will be set as default		
+		//Attributes of manager
+		//Obtains input from the user for the number of round. 
+		//If a number outside the range is chosen, 10 will be set as default		
 		System.out.print("Enter the number of rounds: ");
 		numRounds = in.nextInt ();
 		if (numRounds > 100 || numRounds < 1)
@@ -45,8 +46,10 @@ public class Manager
 				System.out.println("Invalid number entered, default set to 10 rounds");
 			}
 		in.nextLine(); 
-//Obtains information from the user for the percentage of each attack and passes them back into the attack class later. If the total does not
-//equal 100, then a roughly equal probability will be chosen 		
+		
+		//Obtains information from the user for the percentage of each attack and passes 
+		//them back into the attack class later. If the total does not
+		//equal 100, then a roughly equal probability will be chosen 		
 		System.out.println("Enter the percentage of attacks that will be aimed low:");
 		int lowAttack = in.nextInt();
 		in.nextLine(); 
@@ -76,8 +79,8 @@ public class Manager
 		Defense defender = new Defense();
 		
 	
-//Main loop that obtains the random attack and defense from the classes
-//Also counts the number and types of attacks and blocks for display as a statistic		
+		//Main loop that obtains the random attack and defense from the classes
+		//Also counts the number and types of attacks and blocks for display as a statistic		
 		for (count = 0; count < numRounds; count++)
 		{
 			attacker.getAttack(lowAttack, medAttack, highAttack);
@@ -96,8 +99,10 @@ public class Manager
 				{
 					highAttacks++;
 				}
-// Blocker AI which kicks in after a minimum of 20 rounds which then takes in whichever attack has occurred > 50% of the time
-// And all future defense actions will block only that type of attack 
+			
+			// Blocker AI which kicks in after a minimum of 20 rounds which then takes in whichever 
+			// attack has occurred > 50% of the time
+			// And all future defense actions will block only that type of attack 
 			if ((count > 20))
 				{
 					if (lowAttacks > 10)
@@ -125,7 +130,8 @@ public class Manager
 				{
 					highBlocks++;
 				}
-	//Prints updated information each round as well as keeps a running total of blocks and hits
+			
+			//Prints updated information each round as well as keeps a running total of blocks and hits
 			System.out.println("Round " + (count + 1) + "...   " + "Attacker: " + attack + "  Defender: " + defense);
 			
 			if (defense.equals(attack))
@@ -154,7 +160,8 @@ public class Manager
 // Display of all statistics
 		System.out.println ("Summary of Combat");
 		System.out.println ("Total Hits Overall: " + numHits + "   Total Blocks Overall: " + numBlocks);
-		System.out.println ("Attacker Proportions:  " + "Low  " + lowAttack + "% " + "Medium  " + medAttack + "% " + "High  " + highAttack + "% ");
+		System.out.println ("Attacker Proportions:  " + "Low  " + lowAttack + "% " + "Medium  " +
+							medAttack + "% " + "High  " + highAttack + "% ");
 		System.out.print ("Defender Proportions:  " + "Low  ");
 		System.out.printf("%.2f", (lowBlocks*100)/(count+1));
 		System.out.print("% " + "Medium  "); 
