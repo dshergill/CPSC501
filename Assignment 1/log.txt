@@ -1,0 +1,102 @@
+Diljot@Diljot-PC MINGW64 ~/Desktop/CPSC501 (master)
+$ git log
+commit 120b98f3fd725d4a8998f67b4ecf95bd1db7a019
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 01:36:09 2016 -0600
+
+    Finished Testing
+
+commit 4e079e737802d773f075aee6848c49872e5c66ff
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 01:35:40 2016 -0600
+
+    Finished Defense Tests
+
+commit 1478ecce645ae6049d533163d4b3ea38d32089a0
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 01:27:47 2016 -0600
+
+    Performed testing on Attack class
+
+commit 801e61bd56746405d7d86bf1bc8580908dfc1e7d
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 01:00:29 2016 -0600
+
+    Further broke down calculate method.
+
+    Removed a method from calculate and added to Defense where it belonged
+
+commit 96f3aec9b5e4144da330116831fea3fc22871f6f
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 00:36:04 2016 -0600
+
+    Broke up long method in Manager class, addded a Driver class
+
+commit a7f53bada5a094e599ebd786660a0e7061a35b09
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 00:25:16 2016 -0600
+
+    Re-commit of tests. Error in previous.
+
+commit 3d23cc4728789b68b5619345a5df647c5bd8f5d3
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 00:20:42 2016 -0600
+
+    Revert "Added initial test classes"
+
+    This reverts commit c2b63d1d2715f4c6e02e1c86637a65f067b824cf.
+
+commit c2b63d1d2715f4c6e02e1c86637a65f067b824cf
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 00:13:34 2016 -0600
+
+    Added initial test classes
+
+commit 44c8b9b87166f17f45826337642a29573b2a0600
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 00:07:21 2016 -0600
+
+    Imported files into eclipse. Set up unit testing
+
+commit a558ef744ebc1281d4c0f09e1b865691c9b39065
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 13 22:45:30 2016 -0600
+
+    Updated Bad Smells
+
+commit ef869a744dbeaf6a9e3aeed7a33524d48415a97c
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Oct 11 21:40:53 2016 -0600
+
+    Initial upload of files
+
+commit efc275cd4a4a11ad4fcce6542d982fb9b9c7c52d
+Author: dshergill <dshergil@ucalgary.ca>
+Date:   Wed Oct 5 14:03:10 2016 -0600
+
+    Initial commit
+ ESCOD
+commit 44c8b9b87166f17f45826337642a29573b2a0600
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Fri Oct 14 00:07:21 2016 -0600
+
+    Imported files into eclipse. Set up unit testing
+
+commit a558ef744ebc1281d4c0f09e1b865691c9b39065
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 13 22:45:30 2016 -0600
+
+    Updated Bad Smells
+
+commit ef869a744dbeaf6a9e3aeed7a33524d48415a97c
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Oct 11 21:40:53 2016 -0600
+
+    Initial upload of files
+
+commit efc275cd4a4a11ad4fcce6542d982fb9b9c7c52d
+Author: dshergill <dshergil@ucalgary.ca>
+Date:   Wed Oct 5 14:03:10 2016 -0600
+
+    Initial commit
+(END)
