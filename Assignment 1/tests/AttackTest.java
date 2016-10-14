@@ -26,20 +26,13 @@ public class AttackTest
 	public void testAtk()
 	{
 		//Test a passable string
-		attacker.getAttack(10, 10, 10);
+		attacker.getAttack(0, 0, 100);
 		attack = attacker.returnedAttack();
 		assertEquals("High", attack);
-		//Test an acceptable string that does not pass
-		attacker.getAttack(20, 20, 20);
+		//Test an acceptable int that does not pass
+		attacker.getAttack(101, 0, 0);
 		attack = attacker.returnedAttack();
 		assertEquals("Low", attack);
-		//Test an integer	
-		attacker.getAttack(10, 10, 10);
-		attack = attacker.returnedAttack();
-		assertEquals(10, attack);
-		//Test a zero
-		attacker.getAttack(20, 20, 20);
-		attack = attacker.returnedAttack();
-		assertEquals(0, attack);
+
 	}
 }
