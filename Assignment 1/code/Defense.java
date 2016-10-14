@@ -36,6 +36,9 @@ public class Defense
 		{
 			defense = "High";
 		}
+		else {
+			System.out.println("Error, not enough attacks");
+		}
 		return defense;
 	}
 
