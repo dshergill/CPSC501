@@ -23,5 +23,20 @@ public class Defense
 	{
 		return defense;
 	}
+	public String defenseChoice (float lowAttacks, float medAttacks, float highAttacks) {
+		if (lowAttacks > 10)
+		{
+			defense = "Low";
+		}
+		else if ((medAttacks > 10))
+		{
+			defense = "Medium";
+		}
+		else if ((highAttacks > 10))
+		{
+			defense = "High";
+		}
+		return defense;
+	}
 
 }

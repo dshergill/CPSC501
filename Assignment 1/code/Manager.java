@@ -87,50 +87,18 @@ public class Manager
 			attack = attacker.returnedAttack();
 			defender.getDefense();
 			defense = defender.returnedDefense();
-			if (attack == "Low")
-				{
-					lowAttacks++;
-				}
-			else if (attack == "Medium")
-				{
-					medAttacks++;
-				}
-			else if (attack == "High")
-				{
-					highAttacks++;
-				}
+			
 			
 			// Blocker AI which kicks in after a minimum of 20 rounds which then takes in whichever 
 			// attack has occurred > 50% of the time
 			// And all future defense actions will block only that type of attack 
-			if ((count > 20))
+			if (count > 20)
 				{
-					if (lowAttacks > 10)
-						{
-							defense = "Low";
-						}
-					else if ((medAttacks > 10))
-						{
-							defense = "Medium";
-						}
-					else if ((highAttacks > 10))
-						{
-							defense = "High";
-						}
-				}
-			if (defense == "Low")
-				{
-					lowBlocks++;
-				}
-			else if (defense == "Medium")
-				{
-					medBlocks++;
-				}
-			else if (defense == "High")
-				{
-					highBlocks++;
+					defense = defender.defenseChoice(lowAttack, medAttack, highAttack);
 				}
 			
+			blockCounter(defense);
+
 			//Prints updated information each round as well as keeps a running total of blocks and hits
 			System.out.println("Round " + (count + 1) + "...   " + "Attacker: " + attack + "  Defender: " + defense);
 			
@@ -154,16 +122,30 @@ public class Manager
 		
 	}
 	
+	public void blockCounter (String defense) {
+		if (defense == "Low")
+		{
+			lowBlocks++;
+		}
+		else if (defense == "Medium")
+		{
+			medBlocks++;
+		}
+		else if (defense == "High")
+		{
+			highBlocks++;
+		}
+	}
 
 	public void displayStats(int lowAttack, int medAttack, int highAttack)
 	{
-// Display of all statistics
+		// Display of all statistics
 		System.out.println ("Summary of Combat");
 		System.out.println ("Total Hits Overall: " + numHits + "   Total Blocks Overall: " + numBlocks);
 		System.out.println ("Attacker Proportions:  " + "Low  " + lowAttack + "% " + "Medium  " +
 							medAttack + "% " + "High  " + highAttack + "% ");
 		System.out.print ("Defender Proportions:  " + "Low  ");
-		System.out.printf("%.2f", (lowBlocks*100)/(count+1));
+		System.out.printf("%.2f", (lowBlocks * 100)/(count+1));
 		System.out.print("% " + "Medium  "); 
 		System.out.printf("%.2f", ((medBlocks*100)/(count+1)));
 		System.out.print("% " + "High  ");
