@@ -1,5 +1,4 @@
 /*DILJOT SHERGILL
-T03
 10055781
 */
 import java.util.Random;
@@ -12,7 +11,8 @@ public class Attack
 	private int probabilityMedAttacks;
 	private int probabilityLowAttacks;
 	private int chance;
-	
+	static final int MIN_CHANCE = 0;
+	static final int RAND_RANGE_MAX = 100;
 
 //Uses the input of probabilities from the Manager
 //Randomly generates a number from 1-100, and based on this number (chance) and the defined probability by the user (in manager), this
@@ -20,9 +20,9 @@ public class Attack
 	public void getAttack(int probabilityLowAttacks, int probabilityMedAttacks, int probabilityHighAttacks)
 	{
 		Random rand = new Random();
-		chance = rand.nextInt(100);
+		chance = rand.nextInt(RAND_RANGE_MAX);
 		
-		if ((chance > 0) && (chance <= probabilityLowAttacks))
+		if ((chance > MIN_CHANCE) && (chance <= probabilityLowAttacks))
 		{
 			attack = "Low";
 		}

@@ -13,10 +13,14 @@ public class Defense
 	float highBlocks;
 	
 //Randomly generates a Low, Medium or High attacks from an array using the random method
-	public String getDefense()
+	public void getDefense()
 	{
 		defenseTypes = new String [] {"Low", "Medium", "High"};
 		defense = defenseTypes[new Random().nextInt(defenseTypes.length)];
+	}
+	
+	public String returnedDefense()
+	{
 		return defense;
 	}
 

@@ -1,11 +1,6 @@
 /*DILJOT SHERGILL
-T03
 10055781
  
- 
- 
-VERSION 1.0
-Program features:
 -Obtains attack based on proportions set by the user
 -Obtains defense randomly until 20 rounds have occurred
 -After 20 rounds the defender will block an attack that has occured more than 50% of the time in the first 20 rounds
@@ -23,28 +18,25 @@ import java.util.Random;
 //Initializes the main program
 public class Manager
 {
-	public static void main(String [] args)
+	private int numRounds;
+	private int count;
+	private int numBlocks = 0;
+	private int numHits = 0;
+	private float lowBlocks = 0;
+	private float medBlocks = 0;
+	private float highBlocks = 0;
+	private float lowAttacks = 0;
+	private float medAttacks = 0;
+	private float highAttacks= 0;
+	private String attack;
+	private String defense;
+	private Scanner in = new Scanner (System.in);
+		
+	public void start()
 	{
 //Attributes of manager
-		int numRounds;
-		int count;
-		int numBlocks = 0;
-		int numHits = 0;
-		float lowBlocks = 0;
-		float medBlocks = 0;
-		float highBlocks = 0;
-		float lowAttacks = 0;
-		float medAttacks = 0;
-		float highAttacks= 0;
-		String attack;
-		String defense;
-//Instantiates Attack and Defense classes for use throughout this class		
-		Attack attacker  = new Attack();
-		Defense defender = new Defense();
-		
-		Scanner in = new Scanner (System.in);
 //Obtains input from the user for the number of round. If a number outside the range is chosen, 10 will be set as default		
-		System.out.print("Enter the number of rounds ");
+		System.out.print("Enter the number of rounds: ");
 		numRounds = in.nextInt ();
 		if (numRounds > 100 || numRounds < 1)
 			{
@@ -72,13 +64,25 @@ public class Manager
 			}
 		System.out.println("COMBAT INITIALIZED!");
 		System.out.println("-------------------");
+		
+		calculate(lowAttack, medAttack, highAttack);
+	}
+		
+	public void calculate(int lowAttack, int medAttack, int highAttack)
+	{
+		//Instantiates Attack and Defense classes for use throughout this class		
+		Attack attacker  = new Attack();
+		Defense defender = new Defense();
+		
+	
 //Main loop that obtains the random attack and defense from the classes
 //Also counts the number and types of attacks and blocks for display as a statistic		
 		for (count = 0; count < numRounds; count++)
 		{
 			attacker.getAttack(lowAttack, medAttack, highAttack);
 			attack = attacker.returnedAttack();
-			defense = defender.getDefense();
+			defender.getDefense();
+			defense = defender.returnedDefense();
 			if (attack == "Low")
 				{
 					lowAttacks++;
@@ -130,7 +134,6 @@ public class Manager
 					System.out.println("\tTotal Hits: " + numHits);
 					System.out.println("\tTotal Blocks: " + numBlocks);
 				}
-				
 			else
 				{
 					System.out.println("\tHit!\n");
@@ -139,6 +142,14 @@ public class Manager
 					System.out.println("\tTotal Blocks: " + numBlocks);
 				}
 		}
+		
+		displayStats(lowAttack, medAttack, highAttack);
+		
+	}
+	
+
+	public void displayStats(int lowAttack, int medAttack, int highAttack)
+	{
 // Display of all statistics
 		System.out.println ("Summary of Combat");
 		System.out.println ("Total Hits Overall: " + numHits + "   Total Blocks Overall: " + numBlocks);
@@ -149,25 +160,9 @@ public class Manager
 		System.out.printf("%.2f", ((medBlocks*100)/(count+1)));
 		System.out.print("% " + "High  ");
 		System.out.printf("%.2f", ((highBlocks*100)/(count+1)));
-		System.out.print("% ");
+		System.out.println("% ");		
+	
 	}
-		
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
