@@ -36,4 +36,14 @@ public class DefenseTest
 		assertEquals(0, defense);
 		
 	}
+	@Test
+	public void testDefChoice() {
+		//Test passable input
+		defense = defender.defenseChoice(100, 0, 0);
+		assertEquals("Low", defense);
+		//Test improper input
+		defense = defender.defenseChoice(0, 0, 0);
+		String errorMessage = "Error, not enough attacks";
+		assertEquals("Error, not enough attacks", errorMessage);
+	}
 }
