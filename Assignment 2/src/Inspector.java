@@ -130,7 +130,7 @@ public class Inspector {
 	{		
 		Class supClass = classObject.getSuperclass();
 		
-		while (supClass != (Object.class))
+		if (supClass != (Object.class))
 		{
 			inspectClassName(obj, supClass, recursive);
 			inspectSuperclassName(obj, supClass, recursive);
