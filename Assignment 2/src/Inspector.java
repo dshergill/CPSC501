@@ -14,6 +14,9 @@ public class Inspector {
 			inspectSuperclassName(obj, classObject, recursive);
 			inspectClassInterfaces(obj, classObject, recursive);
 			inspectClassMethods(obj, classObject, recursive);
+			inspectClassConstructors(obj, classObject, recursive);
+			inspectClassFields(obj, classObject, recursive);
+			inspectClassHierarchy(obj, classObject, recursive);
 		}
 	}
 	
@@ -71,5 +74,74 @@ public class Inspector {
 			System.out.println("   Method modifiers: " + 
 			Modifier.toString(classObject.getModifiers()));
 		}
+	}
+	private void inspectClassConstructors(Object obj, Class classObject, boolean recursive)
+	{
+		Constructor[] theConstructors = classObject.getConstructors(); //get all public
+		//constructors
+		System.out.print("Constructors: \n" );
+		if (theConstructors.length > 0)
+		{
+			for (int i = 0; i < theConstructors.length; i++) {
+				System.out.print("   (");
+				Class[] parameterTypes = theConstructors[i].getParameterTypes(); //get the constructor
+				//parameters types
+				for (int k = 0; k < parameterTypes.length; k ++) {
+					//get the name of each parameter
+					String parameterString = parameterTypes[k].getName(); 
+					System.out.print(parameterString + " ");
+				}
+			System.out.println(")");
+			}
+		}
+		
+		
+	}	
+    
+	private void inspectClassFields(Object obj, Class classObject, boolean recursive)
+	{
+
+		Field[] allFields = classObject.getDeclaredFields(); //returns all the accessible 	
+		
+		if (allFields.length >0)
+		{
+		    //public fields of c
+			for (int i=0; i < allFields.length; i++) {
+				String fieldName = allFields[i].getName(); //gets the field’s name
+				Class typeClass = allFields[i].getType(); //gets the field’s type
+				String fieldType = allFields[i].getName(); //gets the type’s name
+				
+				System.out.println("Field Name: " + fieldName);
+				System.out.println("      Type: " + typeClass);
+				
+			try{
+				allFields[i].setAccessible(true);	
+				System.out.println("      Value: " + allFields[i].get(obj));
+			} catch (IllegalAccessException e) {
+				System.out.println(e);
+			}
+			}
+		}
+		
+			
+	}
+	
+	private void inspectClassHierarchy(Object obj, Class classObject, boolean recursive)
+	{		
+		Class supClass = classObject.getSuperclass();
+		
+		while (supClass != (Object.class))
+		{
+			inspectClassName(obj, supClass, recursive);
+			inspectSuperclassName(obj, supClass, recursive);
+			inspectClassInterfaces(obj, supClass, recursive);
+			inspectClassMethods(obj, supClass, recursive);
+			inspectClassConstructors(obj, supClass, recursive);
+			inspectClassFields(obj, supClass, recursive);
+			inspectClassHierarchy(obj, supClass, recursive);
+			
+			supClass = classObject.getSuperclass();
+		}
+			
 	}
 }
