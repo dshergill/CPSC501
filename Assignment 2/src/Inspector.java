@@ -22,18 +22,21 @@ public class Inspector {
 	
 	private void inspectClassName(Object obj, Class classObject, boolean recursive) 
 	{
+		//Retrieves and prints the class name
 		String className = classObject.getName();
 		System.out.println("Class name: " + className);
 	}
 	
 	private void inspectSuperclassName(Object obj, Class classObject, boolean recursive)
 	{
+		//Retrieves and prints the superclass name if it exists
 		String superClassName = classObject.getSuperclass().getName();
 		System.out.println("Super class name: " + superClassName);
 	}
 	
 	private void inspectClassInterfaces(Object obj, Class classObject, boolean recursive)
 	{
+		//Retrieves and prints all interfaces implemented by a class
 		Class[] classInterfaces = classObject.getInterfaces();
 		for (int i=0;i<classInterfaces.length; i++){
 			System.out.println("Implements Interface: " + classInterfaces[i].getName());
@@ -128,6 +131,8 @@ public class Inspector {
 	
 	private void inspectClassHierarchy(Object obj, Class classObject, boolean recursive)
 	{		
+		//Feeds superclass into the methods recursively until the
+		//superclass is non-existent
 		Class supClass = classObject.getSuperclass();
 		
 		if (supClass != (Object.class))
