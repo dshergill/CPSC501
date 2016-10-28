@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.lang.reflect.*;
 
@@ -20,21 +21,21 @@ public class Inspector {
 		}
 	}
 	
-	private void inspectClassName(Object obj, Class classObject, boolean recursive) 
+	public void inspectClassName(Object obj, Class classObject, boolean recursive) 
 	{
 		//Retrieves and prints the class name
 		String className = classObject.getName();
 		System.out.println("Class name: " + className);
 	}
 	
-	private void inspectSuperclassName(Object obj, Class classObject, boolean recursive)
+	public void inspectSuperclassName(Object obj, Class classObject, boolean recursive)
 	{
 		//Retrieves and prints the superclass name if it exists
 		String superClassName = classObject.getSuperclass().getName();
 		System.out.println("Super class name: " + superClassName);
 	}
 	
-	private void inspectClassInterfaces(Object obj, Class classObject, boolean recursive)
+	public void inspectClassInterfaces(Object obj, Class classObject, boolean recursive)
 	{
 		//Retrieves and prints all interfaces implemented by a class
 		Class[] classInterfaces = classObject.getInterfaces();
@@ -43,7 +44,7 @@ public class Inspector {
 		}
 	}
 	
-	private void inspectClassMethods(Object obj, Class classObject, boolean recursive)
+	public void inspectClassMethods(Object obj, Class classObject, boolean recursive)
 	{
 		Method[] classMethods = classObject.getDeclaredMethods();
 		
@@ -78,7 +79,7 @@ public class Inspector {
 			Modifier.toString(classObject.getModifiers()));
 		}
 	}
-	private void inspectClassConstructors(Object obj, Class classObject, boolean recursive)
+	public void inspectClassConstructors(Object obj, Class classObject, boolean recursive)
 	{
 		Constructor[] theConstructors = classObject.getConstructors(); //get all public
 		//constructors
@@ -101,7 +102,7 @@ public class Inspector {
 		
 	}	
     
-	private void inspectClassFields(Object obj, Class classObject, boolean recursive)
+	public void inspectClassFields(Object obj, Class classObject, boolean recursive)
 	{
 
 		Field[] allFields = classObject.getDeclaredFields(); //returns all the accessible 	
@@ -129,7 +130,7 @@ public class Inspector {
 			
 	}
 	
-	private void inspectClassHierarchy(Object obj, Class classObject, boolean recursive)
+	public void inspectClassHierarchy(Object obj, Class classObject, boolean recursive)
 	{		
 		//Feeds superclass into the methods recursively until the
 		//superclass is non-existent

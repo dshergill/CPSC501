@@ -1,0 +1,636 @@
+Loading object inspector: Inspector
+======================================================
+Running Test: ClassA
+Class name: ClassA
+Super class name: java.lang.Object
+Implements Interface: java.io.Serializable
+Implements Interface: java.lang.Runnable
+Method Name: run
+   Return Type: void
+   Method modifiers: public final
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public final
+Method Name: setVal
+   Return Type: void
+   Parameter Types: int
+   Exceptions Thrown: java.lang.Exception
+   Method modifiers: public final
+Method Name: getVal
+   Return Type: int
+   Method modifiers: public final
+Method Name: printSomething
+   Return Type: void
+   Method modifiers: public final
+Constructors: 
+   ()
+   (int )
+Field Name: val
+      Type: int
+      Value: 3
+Field Name: val2
+      Type: double
+      Value: 0.2
+Field Name: val3
+      Type: boolean
+      Value: true
+======================================================
+======================================================
+Running Test: ClassA
+Class name: ClassA
+Super class name: java.lang.Object
+Implements Interface: java.io.Serializable
+Implements Interface: java.lang.Runnable
+Method Name: run
+   Return Type: void
+   Method modifiers: public final
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public final
+Method Name: setVal
+   Return Type: void
+   Parameter Types: int
+   Exceptions Thrown: java.lang.Exception
+   Method modifiers: public final
+Method Name: getVal
+   Return Type: int
+   Method modifiers: public final
+Method Name: printSomething
+   Return Type: void
+   Method modifiers: public final
+Constructors: 
+   ()
+   (int )
+Field Name: val
+      Type: int
+      Value: 12
+Field Name: val2
+      Type: double
+      Value: 0.2
+Field Name: val3
+      Type: boolean
+      Value: true
+======================================================
+======================================================
+Running Test: ClassB
+Class name: ClassB
+Super class name: ClassC
+Implements Interface: java.lang.Runnable
+Method Name: run
+   Return Type: void
+   Method modifiers: public
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public
+Method Name: func3
+   Return Type: void
+   Parameter Types: int
+   Method modifiers: public
+Constructors: 
+   ()
+Field Name: val
+      Type: class ClassA
+      Value: ClassA
+Field Name: val2
+      Type: class ClassA
+      Value: ClassA
+Field Name: val3
+      Type: class ClassA
+      Value: null
+Class name: ClassC
+Super class name: ClassD
+Implements Interface: InterfaceA
+Method Name: run
+   Return Type: void
+   Method modifiers: public abstract
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public abstract
+Method Name: func1
+   Return Type: void
+   Parameter Types: int
+   Parameter Types: double
+   Parameter Types: boolean
+   Parameter Types: java.lang.String
+   Exceptions Thrown: java.lang.Exception
+   Method modifiers: public abstract
+Method Name: func2
+   Return Type: int
+   Parameter Types: java.lang.String
+   Exceptions Thrown: java.lang.Exception
+ java.lang.ArithmeticException
+ java.lang.IllegalMonitorStateException
+   Method modifiers: public abstract
+Method Name: func0
+   Return Type: void
+   Parameter Types: int
+   Parameter Types: boolean
+   Exceptions Thrown: java.lang.Exception
+   Method modifiers: public abstract
+Method Name: func3
+   Return Type: void
+   Parameter Types: int
+   Method modifiers: public abstract
+Constructors: 
+   ()
+   (int int )
+Field Name: val2
+      Type: class ClassA
+      Value: ClassA
+Field Name: val3
+      Type: class ClassA
+      Value: ClassA
+Field Name: val4
+      Type: class ClassA
+      Value: ClassA
+Class name: ClassD
+Super class name: java.lang.Object
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public
+Method Name: getVal3
+   Return Type: int
+   Method modifiers: public
+Constructors: 
+   ()
+   (int )
+Field Name: val
+      Type: class ClassA
+      Value: ClassA
+Field Name: val2
+      Type: class ClassA
+      Value: null
+Field Name: val3
+      Type: int
+      Value: 34
+Field Name: vallarray
+      Type: class [LClassA;
+      Value: [LClassA;@33909752
+======================================================
+======================================================
+Running Test: ClassD
+Class name: ClassD
+Super class name: java.lang.Object
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public
+Method Name: getVal3
+   Return Type: int
+   Method modifiers: public
+Constructors: 
+   ()
+   (int )
+Field Name: val
+      Type: class ClassA
+      Value: ClassA
+Field Name: val2
+      Type: class ClassA
+      Value: null
+Field Name: val3
+      Type: int
+      Value: 32
+Field Name: vallarray
+      Type: class [LClassA;
+      Value: [LClassA;@55f96302
+======================================================
+======================================================
+Running Test: ClassD
+Class name: ClassD
+Super class name: java.lang.Object
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public
+Method Name: getVal3
+   Return Type: int
+   Method modifiers: public
+Constructors: 
+   ()
+   (int )
+Field Name: val
+      Type: class ClassA
+      Value: ClassA
+Field Name: val2
+      Type: class ClassA
+      Value: null
+Field Name: val3
+      Type: int
+      Value: 34
+Field Name: vallarray
+      Type: class [LClassA;
+      Value: [LClassA;@3d4eac69
+======================================================
+======================================================
+Running Test: [LClassB;@42a57993
+Class name: [LClassB;
+Super class name: java.lang.Object
+Implements Interface: java.lang.Cloneable
+Implements Interface: java.io.Serializable
+Constructors: 
+======================================================
+======================================================
+Running Test: [[LClassB;@6bc7c054
+Class name: [[LClassB;
+Super class name: java.lang.Object
+Implements Interface: java.lang.Cloneable
+Implements Interface: java.io.Serializable
+Constructors: 
+======================================================
+======================================================
+Running Test: Test String
+Class name: java.lang.String
+Super class name: java.lang.Object
+Implements Interface: java.io.Serializable
+Implements Interface: java.lang.Comparable
+Implements Interface: java.lang.CharSequence
+Method Name: equals
+   Return Type: boolean
+   Parameter Types: java.lang.Object
+   Method modifiers: public final
+Method Name: toString
+   Return Type: java.lang.String
+   Method modifiers: public final
+Method Name: hashCode
+   Return Type: int
+   Method modifiers: public final
+Method Name: compareTo
+   Return Type: int
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: compareTo
+   Return Type: int
+   Parameter Types: java.lang.Object
+   Method modifiers: public final
+Method Name: indexOf
+   Return Type: int
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: indexOf
+   Return Type: int
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: indexOf
+   Return Type: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: indexOf
+   Return Type: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: indexOf
+   Return Type: int
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: indexOf
+   Return Type: int
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: long
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: float
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: boolean
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: char[]
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: java.lang.Object
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: char
+   Method modifiers: public final
+Method Name: valueOf
+   Return Type: java.lang.String
+   Parameter Types: double
+   Method modifiers: public final
+Method Name: charAt
+   Return Type: char
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: checkBounds
+   Return Type: void
+   Parameter Types: byte[]
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: codePointAt
+   Return Type: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: codePointBefore
+   Return Type: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: codePointCount
+   Return Type: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: compareToIgnoreCase
+   Return Type: int
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: concat
+   Return Type: java.lang.String
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: contains
+   Return Type: boolean
+   Parameter Types: java.lang.CharSequence
+   Method modifiers: public final
+Method Name: contentEquals
+   Return Type: boolean
+   Parameter Types: java.lang.CharSequence
+   Method modifiers: public final
+Method Name: contentEquals
+   Return Type: boolean
+   Parameter Types: java.lang.StringBuffer
+   Method modifiers: public final
+Method Name: copyValueOf
+   Return Type: java.lang.String
+   Parameter Types: char[]
+   Method modifiers: public final
+Method Name: copyValueOf
+   Return Type: java.lang.String
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: endsWith
+   Return Type: boolean
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: equalsIgnoreCase
+   Return Type: boolean
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: format
+   Return Type: java.lang.String
+   Parameter Types: java.util.Locale
+   Parameter Types: java.lang.String
+   Parameter Types: java.lang.Object[]
+   Method modifiers: public final
+Method Name: format
+   Return Type: java.lang.String
+   Parameter Types: java.lang.String
+   Parameter Types: java.lang.Object[]
+   Method modifiers: public final
+Method Name: getBytes
+   Return Type: void
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: byte[]
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: getBytes
+   Return Type: [B
+   Parameter Types: java.nio.charset.Charset
+   Method modifiers: public final
+Method Name: getBytes
+   Return Type: [B
+   Parameter Types: java.lang.String
+   Exceptions Thrown: java.io.UnsupportedEncodingException
+   Method modifiers: public final
+Method Name: getBytes
+   Return Type: [B
+   Method modifiers: public final
+Method Name: getChars
+   Return Type: void
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: char[]
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: getChars
+   Return Type: void
+   Parameter Types: char[]
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: indexOfSupplementary
+   Return Type: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: intern
+   Return Type: java.lang.String
+   Method modifiers: public final
+Method Name: isEmpty
+   Return Type: boolean
+   Method modifiers: public final
+Method Name: join
+   Return Type: java.lang.String
+   Parameter Types: java.lang.CharSequence
+   Parameter Types: java.lang.CharSequence[]
+   Method modifiers: public final
+Method Name: join
+   Return Type: java.lang.String
+   Parameter Types: java.lang.CharSequence
+   Parameter Types: java.lang.Iterable
+   Method modifiers: public final
+Method Name: lastIndexOf
+   Return Type: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: lastIndexOf
+   Return Type: int
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: lastIndexOf
+   Return Type: int
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: lastIndexOf
+   Return Type: int
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: lastIndexOf
+   Return Type: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: lastIndexOf
+   Return Type: int
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: char[]
+   Parameter Types: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: lastIndexOfSupplementary
+   Return Type: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: length
+   Return Type: int
+   Method modifiers: public final
+Method Name: matches
+   Return Type: boolean
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: nonSyncContentEquals
+   Return Type: boolean
+   Parameter Types: java.lang.AbstractStringBuilder
+   Method modifiers: public final
+Method Name: offsetByCodePoints
+   Return Type: int
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: regionMatches
+   Return Type: boolean
+   Parameter Types: int
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: regionMatches
+   Return Type: boolean
+   Parameter Types: boolean
+   Parameter Types: int
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: replace
+   Return Type: java.lang.String
+   Parameter Types: char
+   Parameter Types: char
+   Method modifiers: public final
+Method Name: replace
+   Return Type: java.lang.String
+   Parameter Types: java.lang.CharSequence
+   Parameter Types: java.lang.CharSequence
+   Method modifiers: public final
+Method Name: replaceAll
+   Return Type: java.lang.String
+   Parameter Types: java.lang.String
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: replaceFirst
+   Return Type: java.lang.String
+   Parameter Types: java.lang.String
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: split
+   Return Type: [Ljava.lang.String;
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: split
+   Return Type: [Ljava.lang.String;
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: startsWith
+   Return Type: boolean
+   Parameter Types: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: startsWith
+   Return Type: boolean
+   Parameter Types: java.lang.String
+   Method modifiers: public final
+Method Name: subSequence
+   Return Type: java.lang.CharSequence
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: substring
+   Return Type: java.lang.String
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: substring
+   Return Type: java.lang.String
+   Parameter Types: int
+   Parameter Types: int
+   Method modifiers: public final
+Method Name: toCharArray
+   Return Type: [C
+   Method modifiers: public final
+Method Name: toLowerCase
+   Return Type: java.lang.String
+   Parameter Types: java.util.Locale
+   Method modifiers: public final
+Method Name: toLowerCase
+   Return Type: java.lang.String
+   Method modifiers: public final
+Method Name: toUpperCase
+   Return Type: java.lang.String
+   Method modifiers: public final
+Method Name: toUpperCase
+   Return Type: java.lang.String
+   Parameter Types: java.util.Locale
+   Method modifiers: public final
+Method Name: trim
+   Return Type: java.lang.String
+   Method modifiers: public final
+Constructors: 
+   ([B int int )
+   ([B java.nio.charset.Charset )
+   ([B java.lang.String )
+   ([B int int java.nio.charset.Charset )
+   ([B int int java.lang.String )
+   (java.lang.StringBuilder )
+   (java.lang.StringBuffer )
+   ([B )
+   ([I int int )
+   ()
+   ([C )
+   (java.lang.String )
+   ([C int int )
+   ([B int )
+   ([B int int int )
+Field Name: value
+      Type: class [C
+      Value: [C@7d4991ad
+Field Name: hash
+      Type: int
+      Value: 0
+Field Name: serialVersionUID
+      Type: long
+      Value: -6849794470754667710
+Field Name: serialPersistentFields
+      Type: class [Ljava.io.ObjectStreamField;
+      Value: [Ljava.io.ObjectStreamField;@28d93b30
+Field Name: CASE_INSENSITIVE_ORDER
+      Type: interface java.util.Comparator
+      Value: java.lang.String$CaseInsensitiveComparator@1b6d3586
+======================================================
