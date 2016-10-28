@@ -139,8 +139,6 @@ public class Inspector {
 			inspectClassConstructors(obj, supClass, recursive);
 			inspectClassFields(obj, supClass, recursive);
 			inspectClassHierarchy(obj, supClass, recursive);
-			
-			supClass = classObject.getSuperclass();
 		}
 			
 	}
