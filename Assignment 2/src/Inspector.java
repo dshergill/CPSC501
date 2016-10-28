@@ -42,7 +42,34 @@ public class Inspector {
 		Method[] classMethods = classObject.getDeclaredMethods();
 		
 		for(int i = 0; i<classMethods.length; i++){
+			String methodString = classMethods[i].getName(); //get the method name
+			System.out.println("Method Name: " + methodString);
+			//get the method return type 
+			String returnString = classMethods[i].getReturnType().getName(); 
+			System.out.println("   Return Type: " + returnString);
+			//get the method parameters types
+			Class<?>[] parameterTypes = classMethods[i].getParameterTypes();
+			Class<?>[] exceptionTypes = classMethods[i].getExceptionTypes();
 			
+			for (int k = 0; k < parameterTypes.length; k ++) {
+				System.out.print("   Parameter Types:");
+				//get the name of each parameter
+				String parameterString = parameterTypes[k].getCanonicalName(); 
+				System.out.print(" " + parameterString + "\n");
+			}
+			
+			if (exceptionTypes.length > 0)
+			{	
+				System.out.print("   Exceptions Thrown:");
+				for (int l = 0; l < exceptionTypes.length; l ++) {
+					//get the name of each parameter
+					String exceptionString = exceptionTypes[l].getCanonicalName(); 
+					System.out.print(" " + exceptionString + "\n");
+				}
+			}
+			
+			System.out.println("   Method modifiers: " + 
+			Modifier.toString(classObject.getModifiers()));
 		}
 	}
 }
