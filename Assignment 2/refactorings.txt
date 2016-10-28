@@ -1,0 +1,24 @@
+Refactor 1:
+Date:   Thu Oct 27 18:05:14 2016 -0600
+
+    Extracted multiple methods.
+	
+commit 2fbc514447ce8a49c101b95f4c3903cbea29182c
+
+------------------------------------------------
+Refactor 2:
+Date:   Thu Oct 27 18:14:31 2016 -0600
+
+    Renamed methods. Changed output strings.
+	
+commit c81d920a161e74a8f8074831e3f8829fba35427e
+
+------------------------------------------------
+Refactor 3:
+Date:   Thu Oct 27 20:34:11 2016 -0600
+
+    Fixed bug in hierarchy inspection.
+	Duplicate Code. 
+	Dead Code.
+	
+commit ae02325b5c0556a6802a46faff8cbc6f335c76c0

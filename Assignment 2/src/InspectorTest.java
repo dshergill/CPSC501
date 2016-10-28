@@ -38,6 +38,7 @@ public class InspectorTest {
 	@Test
 	public void testInspectorSuperclassName()
 	{
+		//USING /r/n for WINDOWS. FOR LINUX USE just /n
 		Object objA = new ClassA();	
 		Class classObjectA = objA.getClass();
 		inspector.inspectSuperclassName(objA, classObjectA, true);
@@ -46,6 +47,7 @@ public class InspectorTest {
 	@Test
 	public void testInspectorClassInterfaces()
 	{
+		//USING /r/n for WINDOWS. FOR LINUX USE just /n
 		Object objA = new ClassA();	
 		Class classObjectA = objA.getClass();
 		inspector.inspectClassInterfaces(objA, classObjectA, true);

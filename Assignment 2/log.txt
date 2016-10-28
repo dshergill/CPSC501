@@ -1,0 +1,128 @@
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 23:01:11 2016 -0600
+
+    Added multiple tests. More bug fixes.
+
+ Assignment 2/.classpath               |   2 +
+ Assignment 2/script.txt               | 636 ++++++++++++++++++++++++++++++++++
+ Assignment 2/src/Asst2TestDriver.java |  10 -
+ Assignment 2/src/ClassA.java          |   1 +
+ Assignment 2/src/ClassB.java          |   1 +
+ Assignment 2/src/ClassC.java          |   1 +
+ Assignment 2/src/ClassD.java          |   1 +
+ Assignment 2/src/Inspector.java       |  15 +-
+ Assignment 2/src/InspectorTest.java   |  56 +++
+ Assignment 2/src/InterfaceA.java      |   1 +
+ Assignment 2/src/InterfaceB.java      |   1 +
+ Assignment 2/src/ObjectInspector.java |  16 -
+ 12 files changed, 708 insertions(+), 33 deletions(-)
+
+commit e226998a2dd8378525d07c01356bf776ab48e4d9
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 22:02:17 2016 -0600
+
+    Added comments to methods
+
+ Assignment 2/src/Inspector.java | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit a4df470db9345d92301ddc8ee646fbe9b32b5bb6
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 21:59:28 2016 -0600
+
+    More bug fixes
+
+ Assignment 2/src/Inspector.java | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit ae02325b5c0556a6802a46faff8cbc6f335c76c0
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 20:34:11 2016 -0600
+
+    Fixed bug in hierarchy inspection.
+
+ Assignment 2/src/Inspector.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a4cb9064358a5f73257e83934cc8d8cd93b7ba6d
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 20:15:57 2016 -0600
+
+    Inspection of fields and contructors implemented.
+
+ Assignment 2/src/Inspector.java | 72 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 72 insertions(+)
+
+commit 30b752a7362fcf1820ca2d02d0dec3cbdca8d089
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 18:25:58 2016 -0600
+
+    Inspect method implemented
+
+ Assignment 2/src/Inspector.java | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+
+commit c81d920a161e74a8f8074831e3f8829fba35427e
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 18:14:31 2016 -0600
+
+    Fixed output strings
+
+ Assignment 2/src/Inspector.java | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
+
+commit 2fbc514447ce8a49c101b95f4c3903cbea29182c
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 18:05:14 2016 -0600
+
+    Extracted multiple methods
+
+ Assignment 2/src/Inspector.java | 46 +++++++++++++++++++++++++++--------------
+ 1 file changed, 31 insertions(+), 15 deletions(-)
+
+commit d02024c3b71ed1d930999059058a910235ecabf9
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 17:56:24 2016 -0600
+
+    Wrote print methods
+
+ Assignment 2/src/Inspector.java | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit ceb25e76dd5d60cc25ec261b69ea39cdc00ad918
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 17:43:20 2016 -0600
+
+    Implemented interface inspector
+
+ Assignment 2/src/Inspector.java | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 976c924faa9559536ec302958bf1ff5972af8584
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 17:36:17 2016 -0600
+
+    Implemented class/superclass name introspection
+
+ Assignment 2/src/Inspector.java | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+commit b21ef80f87749bb89aeeb720e0c5c0e191afb1e2
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Thu Oct 27 17:19:00 2016 -0600
+
+    Initial upload of Object files
+
+ Assignment 2/.classpath               |   6 ++
+ Assignment 2/.gitignore               |   1 +
+ Assignment 2/.project                 |  17 ++++++
+ Assignment 2/src/Asst2TestDriver.java | 107 ++++++++++++++++++++++++++++++++++
+ Assignment 2/src/ClassA.java          |  29 +++++++++
+ Assignment 2/src/ClassB.java          |  20 +++++++
+ Assignment 2/src/ClassC.java          |  29 +++++++++
+ Assignment 2/src/ClassD.java          |  14 +++++
+ Assignment 2/src/InterfaceA.java      |   7 +++
+ Assignment 2/src/InterfaceB.java      |   7 +++
+ Assignment 2/src/ObjectInspector.java |  90 ++++++++++++++++++++++++++++
+ README.md                             |   1 -
+ 12 files changed, 327 insertions(+), 1 deletion(-)
