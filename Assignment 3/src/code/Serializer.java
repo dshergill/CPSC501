@@ -8,12 +8,14 @@ import org.jdom2.Element;
 
 public class Serializer {
 	public static Document serializeObject(Object source) throws Exception {
-		return serializeHelper(source, new Document(new Element("serialized")), new IdentityHashMap());
+		return serializeHelper(source, new Document(new Element("serialized")),
+				new IdentityHashMap<Object, Object>());
 	}
 
-	private static Document serializeHelper(Object source, Document document, IdentityHashMap identityHashMap) {
-		String id = Integer.toString(identityHashMap.size());
-		identityHashMap.put(source, id);
+	private static Document serializeHelper(Object source, Document doc, 
+			IdentityHashMap<Object, Object> map) {
+		String id = Integer.toString(map.size());
+		map.put(source, id);
 		return null;
 	}
 }
