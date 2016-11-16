@@ -57,7 +57,7 @@ public class ObjectCreator {
 		integer2 = scan.nextInt();
 		System.out.println("Enter an integer between 1-50: ");
 		integer3 = scan.nextInt();
-		obj = new RefInt(integer1, integer2, integer3);
+		obj = new ReferenceInteger(integer1, integer2, integer3);
 	}
 	
 	
