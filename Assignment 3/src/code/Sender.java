@@ -19,14 +19,10 @@ public class Sender {
 		
 		Socket socket;
 		String receiver = "localhost";
-		int port;
+		int port = 9999;
 		Scanner scan;
 		ObjectCreator objectCreator = new ObjectCreator();
 		Object obj = objectCreator.getObj();
-		
-		scan = new Scanner(System.in);
-		System.out.println("Enter the port number: ");
-		port = scan.nextInt();
 		
         try {
             socket = new Socket(receiver, port);

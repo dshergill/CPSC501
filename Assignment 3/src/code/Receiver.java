@@ -10,12 +10,9 @@ import org.jdom2.input.SAXBuilder;
 public class Receiver {
 	
 	public static void main(String[] args) {
-		int port;		
+		int port = 9999;		
 		Object obj;
 		Scanner scan = new Scanner(System.in);;
-		
-		System.out.println("Enter the server port number: ");
-		port = scan.nextInt();
 	    try
 	    {
 	        ServerSocket serverSocket = new ServerSocket(port);
