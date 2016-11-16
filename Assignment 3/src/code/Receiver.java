@@ -27,7 +27,7 @@ public class Receiver {
 			
 			SAXBuilder builder = new SAXBuilder();
 			Document doc = (Document)builder.build(file);
-			obj = Deserializer.deserialize(doc);
+			obj = Deserializer.deserializer(doc);
 			try {
 				inputStream.close();
 				serverSocket.close();

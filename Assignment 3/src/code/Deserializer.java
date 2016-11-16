@@ -6,20 +6,20 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 
 public class Deserializer {
-	public static Object deserialize( Document source ) throws Exception
+	public static Object deserializer( Document source ) throws Exception
 	{
-		List objectList = source.getRootElement().getChildren();
-		Map map = new HashMap();
-		createInstances( map, objectList );
-		assignFieldValues( map, objectList );
-		return map.get("0");
+		List objList = source.getRootElement().getChildren();
+		Map table = new HashMap();
+		createInstances( table, objList );
+		assignFieldValues( table, objList );
+		return table.get("0");
 	}
 
-	private static void createInstances( Map map, List objectList ) throws Exception
+	private static void createInstances( Map table, List objList ) throws Exception
 	{
-		for (int i = 0; i < objectList.size(); i++) {
-			Element objectElement = (Element) objectList.get(i);
-			Class cls = Class.forName(objectElement.getAttributeValue("class"));
+		for (int i = 0; i < objList.size(); i++) {
+			Element oElt = (Element) objList.get(i);
+			Class cls = Class.forName(oElt.getAttributeValue("class"));
 			Object instance = null;
 			if (!cls.isArray()) {
 				Constructor c = cls.getDeclaredConstructor(null);
@@ -29,73 +29,72 @@ public class Deserializer {
 				}
 				instance = c.newInstance(null);
 			} else {
-				instance = Array.newInstance(cls.getComponentType(), Integer.parseInt(objectElement.getAttributeValue("length")));
+				instance = Array.newInstance(cls.getComponentType(), Integer.parseInt(oElt.getAttributeValue("length")));
 			}
-			map.put(objectElement.getAttributeValue("id"), instance);
+			table.put(oElt.getAttributeValue("id"), instance);
 		}
 	}
 	
-	private static void assignFieldValues( Map map, List objectList ) throws Exception
+	private static void assignFieldValues( Map table, List objList ) throws Exception
 	{
-		for (int i = 0; i < objectList.size(); i++) {
-			Element objectElement = (Element) objectList.get(i);
-			Object instance = map.get( objectElement.getAttributeValue("id") );
-			List fieldElements = objectElement.getChildren();
+		for (int i = 0; i < objList.size(); i++) {
+			Element oElt = (Element) objList.get(i);
+			Object instance = table.get( oElt.getAttributeValue("id") );
+			List fElts = oElt.getChildren();
 			if (!instance.getClass().isArray()) {
-				for (int j=0; j<fieldElements.size(); j++) {
-					Element fieldElement = (Element) fieldElements.get(j);
-					String className = fieldElement.getAttributeValue("declaringclass");
+				for (int j=0; j<fElts.size(); j++) {
+					Element fElt = (Element) fElts.get(j);
+					String className = fElt.getAttributeValue("declaringclass");
 					Class fieldDC = Class.forName(className);
-					String fieldName = fieldElement.getAttributeValue("name");
-					Field field = fieldDC.getDeclaredField(fieldName);
-					if (!Modifier.isPublic(field.getModifiers())) {
-						field.setAccessible(true);
+					String fieldName = fElt.getAttributeValue("name");
+					Field f = fieldDC.getDeclaredField(fieldName);
+					if (!Modifier.isPublic(f.getModifiers())) {
+						f.setAccessible(true);
 					}
-					Element virtualElement = (Element) fieldElement.getChildren().get(0);
-					field.set( instance, deserializeValue( virtualElement, field.getType(), map ) );
+					Element vElt = (Element) fElt.getChildren().get(0);
+					f.set( instance, deserializeValue( vElt, f.getType(), table ) );
 				}
 			} else {
 				Class comptype = instance.getClass().getComponentType();
-				for ( int j = 0; j < fieldElements.size(); j++) {
+				for ( int j = 0; j < fElts.size(); j++) {
 					Array.set( instance, j,
-						deserializeValue( (Element)fieldElements.get(j), comptype, map ));
+						deserializeValue( (Element)fElts.get(j), comptype, table ));
 				}
 			}
 		}
 	}
 	
-	private static Object deserializeValue( Element virtualElement, Class fieldType, Map map ) throws ClassNotFoundException
+	private static Object deserializeValue( Element vElt, Class fieldType, Map table ) throws ClassNotFoundException
 	{
-		String valtype = virtualElement.getName();
+		String valtype = vElt.getName();
 		if (valtype.equals("null")) {
 			return null;
 		} else if (valtype.equals("reference")) {
-			return map.get(virtualElement.getText());
+			return table.get(vElt.getText());
 		} else {
 			if (fieldType.equals(boolean.class)) {
-				if (virtualElement.getText().equals("true")) {
+				if (vElt.getText().equals("true")) {
 					return Boolean.TRUE;
 				} else {
 				return Boolean.FALSE;
 				}
 			} else if (fieldType.equals(byte.class)) {
-				return Byte.valueOf(virtualElement.getText());
+				return Byte.valueOf(vElt.getText());
 			} else if (fieldType.equals(short.class)) {
-				return Short.valueOf(virtualElement.getText());
+				return Short.valueOf(vElt.getText());
 			} else if (fieldType.equals(int.class)) {
-				return Integer.valueOf(virtualElement.getText());
+				return Integer.valueOf(vElt.getText());
 			} else if (fieldType.equals(long.class)) {
-				return Long.valueOf(virtualElement.getText());
+				return Long.valueOf(vElt.getText());
 			} else if (fieldType.equals(float.class)) {
-				return Float.valueOf(virtualElement.getText());
+				return Float.valueOf(vElt.getText());
 			} else if (fieldType.equals(double.class)) {
-				return Double.valueOf(virtualElement.getText());
+				return Double.valueOf(vElt.getText());
 			} else if (fieldType.equals(char.class)) {
-				return new Character(virtualElement.getText().charAt(0));
+				return new Character(vElt.getText().charAt(0));
 			} else {
-				return virtualElement.getText();
+				return vElt.getText();
 			}
 		}
 	}
-	
 }
