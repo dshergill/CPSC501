@@ -43,7 +43,7 @@ public class Sender {
 				socket.close();
 	        }
 	        catch(Exception ec) {
-	            System.out.println("Error connecting to server:" + ec);
+	            System.out.println("Error connecting to server/closing connection:" + ec);
 	            
 	        }
 			
