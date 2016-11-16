@@ -18,7 +18,7 @@ public class Sender {
 	public static void main (String[] args){
 		
 		Object obj;
-		Socket sock;
+		Socket socket;
 		int portNumber = 4545;
 		String portName = "localhost";
 		ObjectCreator objC = new ObjectCreator();
@@ -26,8 +26,8 @@ public class Sender {
 		try {
 			Document doc = Serializer.serializeObject(obj);
 			FileOutputStream fileOutputstream = new FileOutputStream("output.xml");
-			XMLOutputter xo = new XMLOutputter();
-			xo.output(doc, fileOutputstream);
+			XMLOutputter xmlOutputter = new XMLOutputter();
+			xmlOutputter.output(doc, fileOutputstream);
 			fileOutputstream.close();
 
 			File file = new File("output.xml");
@@ -36,15 +36,16 @@ public class Sender {
 			byte[] fileByte = new byte[fileSize];
 			fileInputStream.read(fileByte);
 			fileInputStream.close();
-			
-			sock = new Socket(portName,portNumber);
-			OutputStream outputStream = sock.getOutputStream();
-			outputStream.write(fileByte, 0, fileSize);
 			try {
-				sock.close();
-			}catch (Exception e) {
-				
-			}
+				socket = new Socket(portName,portNumber);
+				OutputStream outputStream = socket.getOutputStream();
+				outputStream.write(fileByte, 0, fileSize);
+				socket.close();
+	        }
+	        catch(Exception ec) {
+	            System.out.println("Error connectiong to server:" + ec);
+	            
+	        }
 			
 		} catch (Exception e) {
 			System.out.println(e);
