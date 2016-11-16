@@ -16,13 +16,11 @@ public class Sender {
 		
 		ObjectOutputStream sOutput;
 		Socket socket = null;
-		String receiver;
+		String receiver = "localhost";
 		int port;
 		Scanner scan;
 		
 		scan = new Scanner(System.in);
-		System.out.println("Enter the receiver name: ");
-		receiver = scan.nextLine();
 		System.out.println("Enter the port number: ");
 		port = scan.nextInt();
 		
