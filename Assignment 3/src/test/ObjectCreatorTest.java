@@ -24,14 +24,14 @@ public class ObjectCreatorTest {
 	}	
 	
 	@Test
-	public Object testMakeIntObject() {
+	public void testMakeIntObject() {
 		try {
 			Field field = objectCreation.getClass().getDeclaredField("integer1");
 			field.setAccessible(true);
 			field.set(objectCreation, 2);
 			Method method = objectCreation.getClass().getDeclaredMethod("makeInt", null);
 			method.setAccessible(true);
-			return method.invoke(objectCreation, null);
+			method.invoke(objectCreation, null);
 		} catch (NoSuchMethodException | SecurityException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,6 +48,13 @@ public class ObjectCreatorTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return objectCreation;
+		Object testobject = objectCreation.getObj();
+		assertArrayEquals(testobject, 2);
+		
+	}
+
+	private void assertArrayEquals(Object testobject, int i) {
+		// TODO Auto-generated method stub
+		
 	}
 }
