@@ -18,6 +18,9 @@ public class ObjectCreator {
 		System.out.println("Please enter your selection (1-5): ");
 		scan = new Scanner(System.in);
 		selection = scan.nextInt();
+		if (!(selection >= 1 && selection <= 7)){
+			System.out.println("Entered an invalid number, try again");
+		}
 		switch (selection) {
 			case 1: 
 				makeInt();

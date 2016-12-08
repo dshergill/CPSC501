@@ -1,0 +1,113 @@
+commit c8e8fb3d2b4dcfccf2c83448921930f85f3422c2
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 15:53:27 2016 -0700
+
+    Finished test.
+
+commit 2a5c7bb6d2aff32be4bffe1244ae29e03e600ebd
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 15:49:14 2016 -0700
+
+    Small test
+
+commit b385a6d3ef6bc220d719785f4dadeb623bdbe8b7
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 15:12:11 2016 -0700
+
+    Refactored many more variable names
+
+commit e31e8b0dc837d6d8332b9b5987499b82cf341692
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 15:03:20 2016 -0700
+
+    Added safety to socket creation and closing
+
+commit 64e1795517cfbcda3fc1cfca15c8cde038a3b495
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 14:55:42 2016 -0700
+
+    Refactored various variable names
+
+commit af29acf8ac48521cf20e787acab18d54cea0d5e4
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 14:52:36 2016 -0700
+
+    Fixed bug causing wrong output
+
+commit 93e352c8fa2c381241fe7c2be7cf117646a39a74
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 14:23:17 2016 -0700
+
+    Hardcoded port number to 9999 to avoid issues
+
+commit bf387ce36642cfe22cd7f586f3daaea6763f7584
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 01:39:47 2016 -0700
+
+    Sender and receiver implemented
+
+commit 8382722648f26cd5c5fcf82b9181d07c84e33b15
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 00:58:14 2016 -0700
+
+    Refactored Class Name
+
+commit 79db3482c913a10dd5f2b745c435f3f4e042e4dd
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 00:39:27 2016 -0700
+
+    Refactored various variable names
+
+commit 7d0d890fbfa39e14fb27b236b6cce772c4b8c30e
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Wed Nov 16 00:32:44 2016 -0700
+
+    Deserializer implemented
+
+commit 58289100cc15e35090961e33916abd3d80990cee
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 15 20:28:21 2016 -0700
+
+    Initialied Deserializer
+
+commit c37d6455ef5a21dda27902679c8eaafff0449e20
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 15 20:24:58 2016 -0700
+
+    Implemented Serialize
+
+commit 5a10b364494fc08f5e4b0eb83f8138ae5669744e
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 15 19:58:39 2016 -0700
+
+    Refactored Hash map for type safety
+
+commit 8fee0886d85e74e5bba49b7a1dcb4190d3cdc4a0
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 15 19:57:25 2016 -0700
+
+    Added serializable functionality
+
+commit c4c2d02a925d8b42d73a7b914b80de532ad432c3
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 15 18:45:18 2016 -0700
+
+    ObjectCreator + Objects implemented
+
+commit 93353ab5e20d09bd0b26e51023f4ab4f40776073
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 15 18:13:55 2016 -0700
+
+    Sender and Receiver implemented. Default use is "localhost"
+
+commit 48be51eb476edf4647243f6724e6c6a40644ecd1
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 15 18:00:05 2016 -0700
+
+    Sender connection functionality added
+
+commit a246f3ca5a5fe56406ce2d578199a8a25342e55a
+Author: dshergill <diljotshergill@hotmail.com>
+Date:   Tue Nov 8 17:13:58 2016 -0700
+
+    Initial Upload

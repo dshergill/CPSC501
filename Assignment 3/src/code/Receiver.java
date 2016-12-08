@@ -9,47 +9,40 @@ import org.jdom2.input.SAXBuilder;
 
 public class Receiver {
 	
-	public static void main(String[] args) {
-		int port;		
+	public static void main (String[] args) {
 		Object obj;
-		Scanner scan = new Scanner(System.in);;
-		
-		System.out.println("Enter the server port number: ");
-		port = scan.nextInt();
-	    try
-	    {
-	        ServerSocket serverSocket = new ServerSocket(port);
-	        File file = new File("received.xml");
-	        FileOutputStream fileOutputStream = new FileOutputStream(file);
-	        byte[] fileByte = new byte[10000];
-
-            System.out.println("Receiver waiting for Sender on port " + port + ".");
-            Socket socket = serverSocket.accept();
-            InputStream inputStream = socket.getInputStream();
+		int portNumber = 4545;
+		try {
+			ServerSocket serverSocket = new ServerSocket(portNumber);
+			File file = new File("received.xml");
+			FileOutputStream fileOutputStream = new FileOutputStream(file);
+			byte[] fileByte = new byte[10000];
+			
+			Socket socket = serverSocket.accept();
+			InputStream inputStream = socket.getInputStream();
+			
+			int fileSize;
+			fileSize = inputStream.read(fileByte);
+			fileOutputStream.write(fileByte, 0, fileSize);
+			
+			SAXBuilder builder = new SAXBuilder();
+			Document doc = (Document)builder.build(file);
+			obj = Deserializer.deserializer(doc);
+			try {
+				inputStream.close();
+				serverSocket.close();
+				socket.close();
+				fileOutputStream.close();
+			}
+			catch(Exception ec) {
+	            System.out.println("Error closing sockets/streams:" + ec);
 	            
-            int fileSize;
-            fileSize = inputStream.read(fileByte);
-            fileOutputStream.write(fileByte, 0, fileSize);
-	            
-            SAXBuilder builder = new SAXBuilder();
-            Document doc = (Document)builder.build(file);
-            obj = Deserializer.deserialize(doc);
-            
-        	inputStream.close();
-            serverSocket.close();
-            socket.close();
-            fileOutputStream.close();
-	        
-		}  
-	    catch (IOException e) {
-	        String msg = " Exception on new ServerSocket: " + e + "\n";
-	        System.out.println(msg);
-	    } catch (JDOMException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	        }
+			Inspector.inspect(obj, true);
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}      
+	}
+	
 }

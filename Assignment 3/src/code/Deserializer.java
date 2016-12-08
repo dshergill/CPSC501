@@ -6,48 +6,20 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 
 public class Deserializer {
-	public static Object deserialize(Document source) throws Exception
+	public static Object deserializer( Document source ) throws Exception
 	{
 		List objList = source.getRootElement().getChildren();
-		Map map = new HashMap();
-		createInstances( map, objList );
-		assignFieldValues( map, objList );
-		return map.get("0");
+		Map table = new HashMap();
+		createInstances( table, objList );
+		assignFieldValues( table, objList );
+		return table.get("0");
 	}
 
-	private static void assignFieldValues(Map map, List objList) throws Exception {
+	private static void createInstances( Map table, List objList ) throws Exception
+	{
 		for (int i = 0; i < objList.size(); i++) {
-			Element objectElement = (Element) objList.get(i);
-			Object instance = map.get( objectElement.getAttributeValue("id") );
-			List fieldElements = objectElement.getChildren();
-			if (!instance.getClass().isArray()) {
-				for (int j=0; j<fieldElements.size(); j++) {
-					Element fieldElement = (Element) fieldElements.get(j);
-					String className = fieldElement.getAttributeValue("declaringclass");
-					Class fieldDC = Class.forName(className);
-					String fieldName = fieldElement.getAttributeValue("name");
-					Field f = fieldDC.getDeclaredField(fieldName);
-					if (!Modifier.isPublic(f.getModifiers())) {
-						f.setAccessible(true);
-					}
-					Element vElt = (Element) fieldElement.getChildren().get(0);
-					f.set( instance, deserializeValue( vElt, f.getType(), map ) );
-				}
-			} else {
-				Class comptype = instance.getClass().getComponentType();
-				for ( int j = 0; j < fieldElements.size(); j++) {
-					Array.set( instance, j,
-						deserializeValue( (Element)fieldElements.get(j), comptype, map ));
-				}
-			}
-		}
-		
-	}
-
-	private static void createInstances(Map map, List objList) throws Exception {
-		for (int i = 0; i < objList.size(); i++) {
-			Element objectElement = (Element) objList.get(i);
-			Class cls = Class.forName(objectElement.getAttributeValue("class"));
+			Element oElt = (Element) objList.get(i);
+			Class cls = Class.forName(oElt.getAttributeValue("class"));
 			Object instance = null;
 			if (!cls.isArray()) {
 				Constructor c = cls.getDeclaredConstructor(null);
@@ -57,19 +29,48 @@ public class Deserializer {
 				}
 				instance = c.newInstance(null);
 			} else {
-				instance = Array.newInstance(cls.getComponentType(), Integer.parseInt(objectElement.getAttributeValue("length")));
+				instance = Array.newInstance(cls.getComponentType(), Integer.parseInt(oElt.getAttributeValue("length")));
 			}
-			map.put(objectElement.getAttributeValue("id"), instance);
+			table.put(oElt.getAttributeValue("id"), instance);
 		}
-		
 	}
-	private static Object deserializeValue( Element vElt, Class fieldType, Map map ) throws ClassNotFoundException
+	
+	private static void assignFieldValues( Map table, List objList ) throws Exception
+	{
+		for (int i = 0; i < objList.size(); i++) {
+			Element oElt = (Element) objList.get(i);
+			Object instance = table.get( oElt.getAttributeValue("id") );
+			List fElts = oElt.getChildren();
+			if (!instance.getClass().isArray()) {
+				for (int j=0; j<fElts.size(); j++) {
+					Element fElt = (Element) fElts.get(j);
+					String className = fElt.getAttributeValue("declaringclass");
+					Class fieldDC = Class.forName(className);
+					String fieldName = fElt.getAttributeValue("name");
+					Field f = fieldDC.getDeclaredField(fieldName);
+					if (!Modifier.isPublic(f.getModifiers())) {
+						f.setAccessible(true);
+					}
+					Element vElt = (Element) fElt.getChildren().get(0);
+					f.set( instance, deserializeValue( vElt, f.getType(), table ) );
+				}
+			} else {
+				Class comptype = instance.getClass().getComponentType();
+				for ( int j = 0; j < fElts.size(); j++) {
+					Array.set( instance, j,
+						deserializeValue( (Element)fElts.get(j), comptype, table ));
+				}
+			}
+		}
+	}
+	
+	private static Object deserializeValue( Element vElt, Class fieldType, Map table ) throws ClassNotFoundException
 	{
 		String valtype = vElt.getName();
 		if (valtype.equals("null")) {
 			return null;
 		} else if (valtype.equals("reference")) {
-			return map.get(vElt.getText());
+			return table.get(vElt.getText());
 		} else {
 			if (fieldType.equals(boolean.class)) {
 				if (vElt.getText().equals("true")) {
@@ -96,5 +97,4 @@ public class Deserializer {
 			}
 		}
 	}
-	
 }
